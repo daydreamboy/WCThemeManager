@@ -1,0 +1,51 @@
+{
+    "Meta": {
+        "Name": "ChrismatsTheme"
+    },
+    "Color": {
+        "nav_background_color1": "#FF0000FF",
+        "nav_background_color2": "#FF0000",
+        "nav_background_color3": {
+            "Relocation": "xxx.bundle/yyy.json",
+            "MappingName": "another_nav_background_color3"
+        }
+    },
+    "Font": {
+        "nav_title_font1": {
+            "Name": "xxx",
+            "Size": "17",
+            "Style": "bold"
+        },
+        "nav_title_font2": "xxx 17 bold"
+    },
+    "ImageName": {
+        "nav_background_image1": "xxx.bundle/nav_background_image",
+        "nav_background_image2": {
+            "Name": "xxx.bundle/nav_background_image",
+            "Inset": "{10,10,10,10}"
+        },
+        "nav_background_image3": [
+            {
+                "Name": "1.bundle/nav_background_image"
+            },
+            {
+                "Name": "2.bundle/nav_background_image"
+            }
+        ]
+    },
+    "Frame": {
+        "nav_background_image_frame1": "{0, 0, 100, 100}"
+    },
+    "Origin": {
+        "nav_background_image_origin1": "{0, 10}"
+    },
+    "Size": {
+        "nav_background_image_Size1": "{0, 10}"
+    },
+    "Padding": {
+        "nav_background_image_inset1": "{5, 5, 5, 5}"
+    },
+    "Margin": {
+        "nav_background_image_maring1": "{5, 5, 5, 5}"
+    }
+}

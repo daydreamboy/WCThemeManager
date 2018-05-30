@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'WCThemeManager_Example' do
+  pod 'WCThemeManager', :path => '../'
+
+  target 'WCThemeManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,16 @@
+PODS:
+  - WCThemeManager (0.1.0)
+
+DEPENDENCIES:
+  - WCThemeManager (from `../`)
+
+EXTERNAL SOURCES:
+  WCThemeManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WCThemeManager: 18d87e1b707950de033b12890f13a2657f80d8b5
+
+PODFILE CHECKSUM: 6e18c4cd6896cdc005fb0a39c793f8b0e00ac7e0
+
+COCOAPODS: 1.5.0
