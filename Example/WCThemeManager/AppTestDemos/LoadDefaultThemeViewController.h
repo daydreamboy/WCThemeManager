@@ -1,5 +1,5 @@
 //
-//  LoadGlobalThemeViewController.h
+//  LoadDefaultThemeViewController.h
 //  WCThemeManager_Example
 //
 //  Created by wesley_chen on 2018/5/30.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoadGlobalThemeViewController : UIViewController
+@interface LoadDefaultThemeViewController : UIViewController
 
 @end

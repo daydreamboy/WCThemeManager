@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F731AA020BEF81A00D095F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F731A9C20BEF81A00D095F9 /* RootViewController.m */; };
-		4F731AA420BEF99E00D095F9 /* LoadGlobalThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F731AA320BEF99E00D095F9 /* LoadGlobalThemeViewController.m */; };
-		4F731AAC20BF02D400D095F9 /* WCThemeManager_AppTheme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4F731AAB20BF02D400D095F9 /* WCThemeManager_AppTheme.bundle */; };
+		4F731AA420BEF99E00D095F9 /* LoadDefaultThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F731AA320BEF99E00D095F9 /* LoadDefaultThemeViewController.m */; };
+		4F8E1BDD20BFDA73003148FA /* WCTheme_CustomerTheme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E1BDC20BFDA73003148FA /* WCTheme_CustomerTheme.bundle */; };
+		4F8E1BE020BFEE8F003148FA /* LoadCustomThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E1BDF20BFEE8F003148FA /* LoadCustomThemeViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -43,9 +44,11 @@
 		42E2016777E007A676AD8AA3 /* Pods-WCThemeManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCThemeManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WCThemeManager_Tests/Pods-WCThemeManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F731A9B20BEF81A00D095F9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4F731A9C20BEF81A00D095F9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		4F731AA220BEF99E00D095F9 /* LoadGlobalThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadGlobalThemeViewController.h; sourceTree = "<group>"; };
-		4F731AA320BEF99E00D095F9 /* LoadGlobalThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadGlobalThemeViewController.m; sourceTree = "<group>"; };
-		4F731AAB20BF02D400D095F9 /* WCThemeManager_AppTheme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WCThemeManager_AppTheme.bundle; sourceTree = "<group>"; };
+		4F731AA220BEF99E00D095F9 /* LoadDefaultThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadDefaultThemeViewController.h; sourceTree = "<group>"; };
+		4F731AA320BEF99E00D095F9 /* LoadDefaultThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadDefaultThemeViewController.m; sourceTree = "<group>"; };
+		4F8E1BDC20BFDA73003148FA /* WCTheme_CustomerTheme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WCTheme_CustomerTheme.bundle; sourceTree = "<group>"; };
+		4F8E1BDE20BFEE8F003148FA /* LoadCustomThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadCustomThemeViewController.h; sourceTree = "<group>"; };
+		4F8E1BDF20BFEE8F003148FA /* LoadCustomThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadCustomThemeViewController.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* WCThemeManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCThemeManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,8 +115,10 @@
 		4F731A9D20BEF81A00D095F9 /* AppTestDemos */ = {
 			isa = PBXGroup;
 			children = (
-				4F731AA220BEF99E00D095F9 /* LoadGlobalThemeViewController.h */,
-				4F731AA320BEF99E00D095F9 /* LoadGlobalThemeViewController.m */,
+				4F731AA220BEF99E00D095F9 /* LoadDefaultThemeViewController.h */,
+				4F731AA320BEF99E00D095F9 /* LoadDefaultThemeViewController.m */,
+				4F8E1BDE20BFEE8F003148FA /* LoadCustomThemeViewController.h */,
+				4F8E1BDF20BFEE8F003148FA /* LoadCustomThemeViewController.m */,
 			);
 			path = AppTestDemos;
 			sourceTree = "<group>";
@@ -121,7 +126,7 @@
 		4F731AA520BEFD9C00D095F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4F731AAB20BF02D400D095F9 /* WCThemeManager_AppTheme.bundle */,
+				4F8E1BDC20BFDA73003148FA /* WCTheme_CustomerTheme.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -298,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
-				4F731AAC20BF02D400D095F9 /* WCThemeManager_AppTheme.bundle in Resources */,
+				4F8E1BDD20BFDA73003148FA /* WCTheme_CustomerTheme.bundle in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -377,9 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* AppDelegate.m in Sources */,
-				4F731AA420BEF99E00D095F9 /* LoadGlobalThemeViewController.m in Sources */,
+				4F731AA420BEF99E00D095F9 /* LoadDefaultThemeViewController.m in Sources */,
 				4F731AA020BEF81A00D095F9 /* RootViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				4F8E1BE020BFEE8F003148FA /* LoadCustomThemeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

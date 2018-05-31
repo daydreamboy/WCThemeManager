@@ -8,7 +8,9 @@
         "nav_background_color3": {
             "Relocation": "xxx.bundle/yyy.json",
             "MappingName": "another_nav_background_color3"
-        }
+        },
+        "viewController-backgroundColor": "#FF0000",
+        "viewController-backgroundColor2": "#0000FF"
     },
     "Font": {
         "nav_title_font1": {

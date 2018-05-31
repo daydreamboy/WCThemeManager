@@ -8,7 +8,8 @@
 
 #import "RootViewController.h"
 
-#import "LoadGlobalThemeViewController.h"
+#import "LoadDefaultThemeViewController.h"
+#import "LoadCustomThemeViewController.h"
 
 @interface RootViewController ()
 @property (nonatomic, strong) NSArray *titles;
@@ -31,11 +32,13 @@
 
     // MARK: Configure titles and classes for table view
     _titles = @[
-        @"Demo1ViewController's title",
+        @"load default theme (configured by SDK)",
+        @"load custom theme (configured by App)",
         @"call a test method",
     ];
     _classes = @[
-        [LoadGlobalThemeViewController class],
+        [LoadDefaultThemeViewController class],
+        [LoadCustomThemeViewController class],
         @"testMethod",
     ];
 }

@@ -1,19 +1,19 @@
 //
-//  LoadGlobalThemeViewController.m
+//  LoadDefaultThemeViewController.m
 //  WCThemeManager_Example
 //
 //  Created by wesley_chen on 2018/5/30.
 //  Copyright © 2018 daydreamboy. All rights reserved.
 //
 
-#import "LoadGlobalThemeViewController.h"
-#import "WCThemeManager.h"
+#import "LoadDefaultThemeViewController.h"
+#import <WCThemeManager/WCThemeManager.h>
 
-@interface LoadGlobalThemeViewController ()
+@interface LoadDefaultThemeViewController ()
 
 @end
 
-@implementation LoadGlobalThemeViewController
+@implementation LoadDefaultThemeViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
