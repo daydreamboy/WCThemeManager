@@ -53,6 +53,9 @@ UIImage* WCThemeImage(NSString *key, UIImage *defaultImage) {
 @property (nonatomic, strong) NSMutableDictionary<NSString *, WCTheme *> *themes;
 @end
 
+NSNotificationName WCThemeDidUpdateNotification = @"WCThemeDidUpdateNotification";
+NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotificationKeyUpdatePolicy";
+
 @interface WCTheme ()
 
 // configuration
@@ -277,7 +280,66 @@ UIImage* WCThemeImage(NSString *key, UIImage *defaultImage) {
     return defaultImage;
 }
 
+- (BOOL)updateConfiguration:(NSDictionary *)configuration withPolicy:(WCThemeUpdatePolicy)updatePolicy {
+    
+    if (![configuration isKindOfClass:[NSDictionary class]] || ![NSJSONSerialization isValidJSONObject:configuration]) {
+        return NO;
+    }
+    
+    if (!configuration.count) {
+        return NO;
+    }
+    
+    if (!(updatePolicy == WCThemeUpdatePolicyMerge || updatePolicy == WCThemeUpdatePolicyReplace)) {
+        return NO;
+    }
+    
+    NSArray *themeKeys = @[THEME_KEY_COLOR, THEME_KEY_IMAGE];
+    
+    BOOL updated = NO;
+    for (NSString *themeKey in themeKeys) {
+        if ([configuration[themeKey] isKindOfClass:[NSDictionary class]] && [configuration[themeKey] count]) {
+            updated = YES;
+            [self updateThemeDataForThemeKey:themeKey configuration:configuration withPolicy:updatePolicy];
+        }
+    }
+    
+    if (updated) {
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+        userInfo[WCThemeDidUpdateNotificationKeyUpdatePolicy] = @(updatePolicy);
+        [[NSNotificationCenter defaultCenter] postNotificationName:WCThemeDidUpdateNotification object:self userInfo:userInfo];
+        return YES;
+    }
+    
+    return NO;
+}
+
 #pragma mark - Private Methods
+
+- (void)updateThemeDataForThemeKey:(NSString *)themeKey configuration:(NSDictionary *)configuration withPolicy:(WCThemeUpdatePolicy)updatePolicy {
+    NSArray *keysForUpdate = [configuration[themeKey] allKeys];
+    
+    if (updatePolicy == WCThemeUpdatePolicyReplace) {
+        keysForUpdate = [self.themeData[themeKey] allKeys];
+        [self.themeData[themeKey] removeAllObjects];
+    }
+    [self.themeData[themeKey] addEntriesFromDictionary:configuration[themeKey]];
+    
+    [self removeObjectsForCache:themeKey keys:keysForUpdate];
+}
+
+- (void)removeObjectsForCache:(NSString *)cache keys:(NSArray *)keys {
+    if ([cache isEqualToString:THEME_KEY_COLOR]) {
+        for (NSString *key in keys) {
+            [self.cacheColor removeObjectForKey:key];
+        }
+    }
+    else if ([cache isEqualToString:THEME_KEY_IMAGE]) {
+        for (NSString *key in keys) {
+            [self.cacheImage removeObjectForKey:key];
+        }
+    }
+}
 
 - (void)setThemeConfiguration:(NSDictionary *)themeConfiguration {
     _themeConfiguration = themeConfiguration;
@@ -309,7 +371,7 @@ UIImage* WCThemeImage(NSString *key, UIImage *defaultImage) {
     
     id jsonObject;
     if (data) {
-        jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         
         if (!jsonObject) {
             NSLog(@"get jsonObject failed %@", error);

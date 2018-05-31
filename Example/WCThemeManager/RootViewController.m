@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 
+#import <WCThemeManager/WCThemeManager.h>
 #import "LoadDefaultThemeViewController.h"
 #import "LoadCustomThemeViewController.h"
 
@@ -34,12 +35,18 @@
     _titles = @[
         @"load default theme (configured by SDK)",
         @"load custom theme (configured by App)",
-        @"call a test method",
+        @"update default theme (Merge Mode)",
+        @"update custom theme (Merge Mode)",
+        @"update default theme (Replace Mode)",
+        @"update custom theme (Replace Mode)",
     ];
     _classes = @[
         [LoadDefaultThemeViewController class],
         [LoadCustomThemeViewController class],
-        @"testMethod",
+        @"updateDefaultThemeByMerge",
+        @"updateCustomThemeByMerge",
+        @"updateDefaultThemeByReplace",
+        @"updateCustomThemeByReplace",
     ];
 }
 
@@ -94,7 +101,33 @@
 
 #pragma mark - Test Methods
 
-- (void)testMethod {
+- (void)updateDefaultThemeByMerge {
+    
+    NSDictionary *dict = @{
+                           @"Color": @{
+                               @"viewController-backgroundColor": @"#EEEEEE"
+                           }
+                           };
+    
+    [[WCThemeManager sharedInstance].defaultTheme updateConfiguration:dict withPolicy:WCThemeUpdatePolicyMerge];
+}
+
+- (void)updateCustomThemeByMerge {
+    NSLog(@"test something");
+}
+
+- (void)updateDefaultThemeByReplace {
+    
+    NSDictionary *dict = @{
+                           @"Color": @{
+                                   @"viewController-backgroundColor": @"#EEEEEE"
+                                   }
+                           };
+    
+    [[WCThemeManager sharedInstance].defaultTheme updateConfiguration:dict withPolicy:WCThemeUpdatePolicyReplace];
+}
+
+- (void)updateCustomThemeByReplace {
     NSLog(@"test something");
 }
 

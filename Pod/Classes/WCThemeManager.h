@@ -24,6 +24,16 @@ FOUNDATION_EXPORT UIImage* WCThemeImage(NSString *key, UIImage *defaultImage);
 
 @end
 
+typedef NS_ENUM(NSUInteger, WCThemeUpdatePolicy) {
+    /*! 合并模式更新，集合new合并到集合old，相同元素被替换 */
+    WCThemeUpdatePolicyMerge,
+    /*! 替换模式更新，集合new完全替换集合old */
+    WCThemeUpdatePolicyReplace,
+};
+
+FOUNDATION_EXPORT NSNotificationName WCThemeDidUpdateNotification;
+FOUNDATION_EXPORT NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy;
+
 @interface WCTheme : NSObject
 
 @property (nonatomic, copy, readonly) NSString *name;
@@ -33,6 +43,7 @@ FOUNDATION_EXPORT UIImage* WCThemeImage(NSString *key, UIImage *defaultImage);
 
 - (instancetype)initWithConfiguration:(NSDictionary *)configuration;
 - (instancetype)initWithJSONFilePath:(NSString *)jsonFilePath;
+- (BOOL)updateConfiguration:(NSDictionary *)configuration withPolicy:(WCThemeUpdatePolicy)updatePolicy;
 
 - (UIColor *)colorForKey:(NSString *)key defaultColor:(UIColor *)defaultColor;
 - (UIImage *)imageForKey:(NSString *)key defaultImage:(UIImage *)defaultImage;

@@ -24,8 +24,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		922A30915A5862A1C2A35448 /* Pods_WCThemeManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8AA170C513CD56D4AD6D63 /* Pods_WCThemeManager_Tests.framework */; };
-		E4E04389442CCD118B9735C8 /* Pods_WCThemeManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E9930D99DC869E3D9F5F80 /* Pods_WCThemeManager_Example.framework */; };
+		A11EF98D208EE296A4B504E6 /* libPods-WCThemeManager_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D33AE4F7E3EF108D2CD81E8 /* libPods-WCThemeManager_Tests.a */; };
+		E19FE6A37D1605742B793F98 /* libPods-WCThemeManager_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905055DDAC2ED772C69967A3 /* libPods-WCThemeManager_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C8AA170C513CD56D4AD6D63 /* Pods_WCThemeManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WCThemeManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31750C4E4DA0D6C301AEAACD /* WCThemeManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WCThemeManager.podspec; path = ../WCThemeManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		42E2016777E007A676AD8AA3 /* Pods-WCThemeManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCThemeManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WCThemeManager_Tests/Pods-WCThemeManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F731A9B20BEF81A00D095F9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -69,9 +68,10 @@
 		6859353F5DB45B78A176E7B8 /* Pods-WCThemeManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCThemeManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WCThemeManager_Example/Pods-WCThemeManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85BF2351E951B06676BB326C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		905055DDAC2ED772C69967A3 /* libPods-WCThemeManager_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WCThemeManager_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D33AE4F7E3EF108D2CD81E8 /* libPods-WCThemeManager_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WCThemeManager_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB78CEC1D424033578E3A447 /* Pods-WCThemeManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCThemeManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WCThemeManager_Example/Pods-WCThemeManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B023E2882D75E012209EA243 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B4E9930D99DC869E3D9F5F80 /* Pods_WCThemeManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WCThemeManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93BBCD7E6A6E3680ED1B01C /* Pods-WCThemeManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCThemeManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WCThemeManager_Tests/Pods-WCThemeManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				E4E04389442CCD118B9735C8 /* Pods_WCThemeManager_Example.framework in Frameworks */,
+				E19FE6A37D1605742B793F98 /* libPods-WCThemeManager_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				922A30915A5862A1C2A35448 /* Pods_WCThemeManager_Tests.framework in Frameworks */,
+				A11EF98D208EE296A4B504E6 /* libPods-WCThemeManager_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,8 +159,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				B4E9930D99DC869E3D9F5F80 /* Pods_WCThemeManager_Example.framework */,
-				2C8AA170C513CD56D4AD6D63 /* Pods_WCThemeManager_Tests.framework */,
+				905055DDAC2ED772C69967A3 /* libPods-WCThemeManager_Example.a */,
+				9D33AE4F7E3EF108D2CD81E8 /* libPods-WCThemeManager_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				3C3182905D69CBADD0B0A8A6 /* [CP] Embed Pods Frameworks */,
+				F5AAE6579DCE22B515639E24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,24 +338,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3C3182905D69CBADD0B0A8A6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WCThemeManager_Example/Pods-WCThemeManager_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/WCThemeManager/WCThemeManager.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCThemeManager.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WCThemeManager_Example/Pods-WCThemeManager_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8ADF50143115DB20B4C9250F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +354,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5AAE6579DCE22B515639E24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WCThemeManager_Example/Pods-WCThemeManager_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WCThemeManager/WCThemeManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WCThemeManager.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WCThemeManager_Example/Pods-WCThemeManager_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

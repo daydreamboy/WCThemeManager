@@ -7,9 +7,9 @@
 		<key>filePath</key>
 		<string>WCTheme_CustomerTheme.bundle/AppTheme.json</string>
 		<key>parent</key>
-		<string>default</string>
+		<string></string>
 		<key>lazyLoad</key>
-		<true/>
+		<false/>
 	</dict>
 </dict>
 </plist>

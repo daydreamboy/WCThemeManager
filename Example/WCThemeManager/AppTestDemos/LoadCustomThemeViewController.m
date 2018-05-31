@@ -18,7 +18,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     WCTheme *theme = [[WCThemeManager sharedInstance] registeredThemeWithName:@"appTheme"];
-    self.view.backgroundColor = [theme colorForKey:@"viewController-backgroundColor" defaultColor:[UIColor whiteColor]];
+    self.view.backgroundColor = [theme colorForKey:@"viewController-backgroundColor2" defaultColor:[UIColor whiteColor]];
 }
 
 @end
