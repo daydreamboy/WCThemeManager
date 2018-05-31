@@ -36,8 +36,8 @@
 #define THEME_KEY_IMAGE     @"ImageName"
 
 // 属性key
-#define THEME_KEY_ATTR_NAME     @"Name"
-#define THEME_KEY_ATTR_INSET    @"Inset"
+#define THEME_IMAGE_ATTR_NAME     @"Name"
+#define THEME_IMAGE_ATTR_INSET    @"Inset"
 
 #pragma mark - C functions for default theme
 UIColor* WCThemeColor(NSString *key, UIColor *defaultColor) {
@@ -227,11 +227,11 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
         else if ([value isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dict = (NSDictionary *)value;
             // check image path
-            if ([dict[THEME_KEY_ATTR_NAME] isKindOfClass:[NSString class]]) {
-                imagePath = dict[THEME_KEY_ATTR_NAME];
+            if ([dict[THEME_IMAGE_ATTR_NAME] isKindOfClass:[NSString class]]) {
+                imagePath = dict[THEME_IMAGE_ATTR_NAME];
             }
             // check image inset
-            NSValue *edgeInsetsValue = [WCStringTool edgeInsetsValueFromString:dict[THEME_KEY_ATTR_NAME]];
+            NSValue *edgeInsetsValue = [WCStringTool edgeInsetsValueFromString:dict[THEME_IMAGE_ATTR_NAME]];
             if (edgeInsetsValue) {
                 capInset = edgeInsetsValue.UIEdgeInsetsValue;
                 resizable = YES;
@@ -243,11 +243,11 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
                 if ([object isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *dict = (NSDictionary *)object;
                     // check image path if exists and find the first
-                    if ([dict[THEME_KEY_ATTR_NAME] isKindOfClass:[NSString class]]) {
-                        NSString *path = [[NSBundle mainBundle].bundlePath stringByAppendingPathComponent:dict[THEME_KEY_ATTR_NAME]];
+                    if ([dict[THEME_IMAGE_ATTR_NAME] isKindOfClass:[NSString class]]) {
+                        NSString *path = [[NSBundle mainBundle].bundlePath stringByAppendingPathComponent:dict[THEME_IMAGE_ATTR_NAME]];
                         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-                            imagePath = dict[THEME_KEY_ATTR_NAME];
-                            NSValue *edgeInsetsValue = [WCStringTool edgeInsetsValueFromString:dict[THEME_KEY_ATTR_NAME]];
+                            imagePath = dict[THEME_IMAGE_ATTR_NAME];
+                            NSValue *edgeInsetsValue = [WCStringTool edgeInsetsValueFromString:dict[THEME_IMAGE_ATTR_NAME]];
                             if (edgeInsetsValue) {
                                 capInset = edgeInsetsValue.UIEdgeInsetsValue;
                                 resizable = YES;
@@ -259,6 +259,10 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
             }
         }
         else {
+            if (self.parentName) {
+                return [[WCThemeManager sharedInstance].themes[self.parentName] imageForKey:key defaultImage:defaultImage];
+            }
+            
             // invalid value, just return default
             return defaultImage;
         }
@@ -268,11 +272,6 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
             if (image) {
                 [self.cacheImage setObject:image forKey:key];
                 return image;
-            }
-        }
-        else {
-            if (self.parentName) {
-                return [[WCThemeManager sharedInstance].themes[self.parentName] imageForKey:key defaultImage:defaultImage];
             }
         }
     }
@@ -298,7 +297,7 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
     
     BOOL updated = NO;
     for (NSString *themeKey in themeKeys) {
-        if ([configuration[themeKey] isKindOfClass:[NSDictionary class]] && [configuration[themeKey] count]) {
+        if ([configuration[themeKey] isKindOfClass:[NSDictionary class]]) {
             updated = YES;
             [self updateThemeDataForThemeKey:themeKey configuration:configuration withPolicy:updatePolicy];
         }

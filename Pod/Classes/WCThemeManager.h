@@ -43,6 +43,16 @@ FOUNDATION_EXPORT NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy;
 
 - (instancetype)initWithConfiguration:(NSDictionary *)configuration;
 - (instancetype)initWithJSONFilePath:(NSString *)jsonFilePath;
+
+/**
+ 更新Theme配置
+ 
+ @param configuration 新的Theme配置
+ @param updatePolicy 更新策略，有两种合并模式（WCThemeUpdatePolicyMerge）和替换模式（WCThemeUpdatePolicyReplace）
+    - WCThemeUpdatePolicyMerge，存在相同key，value进行覆盖
+    - WCThemeUpdatePolicyReplace，如果UI属性没有配置（例如configuration中没有Color键），则不进行替换；如果UI属性配置为空或者有值，则进行替换
+ @return YES，更新成功；NO，更新失败
+ */
 - (BOOL)updateConfiguration:(NSDictionary *)configuration withPolicy:(WCThemeUpdatePolicy)updatePolicy;
 
 - (UIColor *)colorForKey:(NSString *)key defaultColor:(UIColor *)defaultColor;

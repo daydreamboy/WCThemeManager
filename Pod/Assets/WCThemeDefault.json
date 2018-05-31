@@ -21,6 +21,16 @@
         "nav_title_font2": "xxx 17 bold"
     },
     "ImageName": {
+        "1": "WCThemeManager.bundle/1.png",
+        "2": "WCThemeManager.bundle/2.png",
+        "3": "WCThemeManager.bundle/3.png",
+        "4": "WCThemeManager.bundle/4.png",
+        "5": "WCThemeManager.bundle/5.png",
+        "6": "WCThemeManager.bundle/6.png",
+        "7": "WCThemeManager.bundle/7.png",
+        "8": "WCThemeManager.bundle/8.png",
+        "9": "WCThemeManager.bundle/9.png",
+        "10": "WCThemeManager.bundle/10.png",
         "nav_background_image1": "xxx.bundle/nav_background_image",
         "nav_background_image2": {
             "Name": "xxx.bundle/nav_background_image",

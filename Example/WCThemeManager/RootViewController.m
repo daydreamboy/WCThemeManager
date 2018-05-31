@@ -121,6 +121,9 @@
     NSDictionary *dict = @{
                            @"Color": @{
                                    @"viewController-backgroundColor": @"#EEEEEE"
+                                   },
+                           @"ImageName": @{
+                                   // 
                                    }
                            };
     

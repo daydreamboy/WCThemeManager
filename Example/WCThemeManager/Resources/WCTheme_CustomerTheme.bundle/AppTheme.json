@@ -1,5 +1,12 @@
 {
     "Color": {
         "viewController-backgroundColor": "#00FF00"
+    },
+    "ImageName": {
+        "1": "WCTheme_CustomerTheme.bundle/1.png",
+        "2": "WCTheme_CustomerTheme.bundle/2.png",
+        "3": "WCTheme_CustomerTheme.bundle/3.png",
+        "4": "WCTheme_CustomerTheme.bundle/4.png",
+        "5": "WCTheme_CustomerTheme.bundle/5.png"
     }
 }
