@@ -72,8 +72,10 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
 // Caches
 @property (nonatomic, strong, readonly) NSCache *cacheColor;
 @property (nonatomic, strong, readonly) NSCache *cacheImage;
+@property (nonatomic, strong, readonly) NSArray *themeKeys;
 
 - (NSMutableDictionary *)loadThemeJSONFileAtPath:(NSString *)path;
+- (void)cleanupAllCaches;
 
 @end
 
@@ -89,6 +91,7 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
         sInstance.themes = [NSMutableDictionary dictionary];
         
         [sInstance loadConfigurationPlistFile];
+        [[NSNotificationCenter defaultCenter] addObserver:sInstance selector:@selector(handleUIApplicationDidReceiveMemoryWarningNotification:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     });
     return sInstance;
 }
@@ -151,6 +154,14 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
         defaultTheme.name = REGISTERED_THEME_NAME_DEFAULT;
         self.themes[defaultTheme.name] = defaultTheme;
     }
+}
+
+#pragma mark - NSNotification
+
+- (void)handleUIApplicationDidReceiveMemoryWarningNotification:(NSNotification *)notification {
+    [self.themes enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSString * _Nonnull key, WCTheme * _Nonnull obj, BOOL * _Nonnull stop) {
+        [obj cleanupAllCaches];
+    }];
 }
 
 @end
@@ -293,7 +304,7 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
         return NO;
     }
     
-    NSArray *themeKeys = @[THEME_KEY_COLOR, THEME_KEY_IMAGE];
+    NSArray *themeKeys = self.themeKeys;
     
     BOOL updated = NO;
     for (NSString *themeKey in themeKeys) {
@@ -384,6 +395,13 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
     return jsonDict;
 }
 
+- (void)cleanupAllCaches {
+    NSArray *themeKeys = self.themeKeys;
+    for (NSString *themeKey in themeKeys) {
+        [self.themeCaches[themeKey] removeAllObjects];
+    }
+}
+
 #pragma mark > Getters
 
 - (NSCache *)cacheColor {
@@ -392,6 +410,10 @@ NSString *WCThemeDidUpdateNotificationKeyUpdatePolicy = @"WCThemeDidUpdateNotifi
 
 - (NSCache *)cacheImage {
     return self.themeCaches[THEME_KEY_IMAGE];
+}
+
+- (NSArray *)themeKeys {
+    return @[THEME_KEY_COLOR, THEME_KEY_IMAGE];
 }
 
 @end
