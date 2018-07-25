@@ -37,5 +37,6 @@ TODO: Add long description of the pod here.
   }
 
   s.public_header_files = 'Pod/Classes/WCThemeManager.h'
-  s.prepare_command = 'bash Hello.sh'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
 end
