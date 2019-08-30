@@ -1,13 +1,18 @@
+
+require '/Users/wesley_chen/GitHub_Projcets/HelloProjects/HelloXcodeproj/02 - Ruby Helper/rubyscript_helper.rb'
+dump_object(self)
+require './development_pods.rb'
+
 #use_frameworks!
 
 platform :ios, '9.0'
 
 target 'WCThemeManager_Example' do
-  pod 'WCThemeManager', :path => '../'
+  pod 'WCThemeManager', :git => 'https://github.com/daydreamboy/WCThemeManager.git'
+  
+  puts self.method(:pod).source_location
 
   target 'WCThemeManager_Tests' do
     inherit! :search_paths
-
-    
   end
 end
